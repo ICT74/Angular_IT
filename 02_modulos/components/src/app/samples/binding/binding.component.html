@@ -2,9 +2,12 @@
 <div>
     <p>
         <label for="nombre">Dime tu nombre</label>
-        <input type="text" id="nombre" [value]="sNombre">
+        <input type="text" id="nombre" [(ngModel)]="sNombre">
     </p>
     <p>
       <button (click)="sNombre=''">Borrar</button>
+    </p>
+    <p>
+    {{sNombre}}
     </p>
 </div>

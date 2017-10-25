@@ -1,6 +1,7 @@
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 //Modulos de la app
 import { SharedModule } from './shared/shared.module';
@@ -11,11 +12,11 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
-    
+    AppComponent    
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     SharedModule,
     SamplesModule
   ],
