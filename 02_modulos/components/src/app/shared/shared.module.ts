@@ -12,7 +12,7 @@ import { PieComponent } from './pie/pie.component';
     CabezaComponent,
     PieComponent],
   exports: [
-    LogoComponent,
+    //LogoComponent, //lo quitamos xq lo llamamos ahora desde la cabecera y esta en el mismo modulo
     CabezaComponent,
     PieComponent
   ]
