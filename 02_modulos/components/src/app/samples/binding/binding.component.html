@@ -5,9 +5,14 @@
         <input type="text" id="nombre" [(ngModel)]="sNombre">
     </p>
     <p>
+        <label for="nombre">Edad</label>
+        <input type="text" id="edad" [(ngModel)]="nEdad">
+    </p>
+    <p>
       <button (click)="btnBorrar()">Borrar</button>
     </p>
     <p>
-    Hola {{sNombre}}
+    Hola {{nEdad > 20 ? sNombre.toUpperCase() : 'Chico'}}
+      tienes {{nEdad+5}} años
     </p>
 </div>
