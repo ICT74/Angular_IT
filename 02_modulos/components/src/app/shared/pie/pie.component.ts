@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
     </footer>
     `,
     styles: [`footer{
-        position: fixed;
-        bottom: 0;
+        //position: fixed;
+        //bottom: 0;
         width: 100%;
         border-top: 1pxpapayawhip solid;
         padding: 1em;
