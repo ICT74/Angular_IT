@@ -12,5 +12,7 @@ public sNombre: string;
   ngOnInit() {
     this.sNombre = "nombre";
   }
-
+  btnBorrar() {
+    this.sNombre='';
+  }
 }
