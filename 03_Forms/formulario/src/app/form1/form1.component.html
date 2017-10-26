@@ -50,14 +50,16 @@
         <!--Checkbox-->    
         <h2>Seleción de opciones</h2>
         <p>
-            <!-- <input id="print" type="checkbox" [(ngModel)]="isClaro" 
-                [disabled]="!impresoraSel"
-                (change)="avisarPrint()">
-            <label for="print">Imprimir resultado</label><br> -->
+            
             
             <input id="tono" name="tono" type="checkbox" [(ngModel)]="isClaro"
                 [disabled]="!impresoraSel" > 
             <label for="tono">Tono claro</label>			
+
+            <input id="color" name="color" type="checkbox" [(ngModel)]="isColor" 
+                [disabled]="!impresoraSel"
+                (change)="avisarPrint()">
+            <label for="print">Imprimir Color</label><br>
         </p>
        
         <!--Select/options --> 

@@ -19,12 +19,17 @@ aImpresoras: Array<string>;
 isClaro: boolean;
 isColor: boolean;
 
+
   constructor() { }
 
   ngOnInit() {
     this.user = {firstName: '', lastName: '', phoneNumber: ''};
     this.aImpresoras = [ 'hp', 'Canon', 'lexmart'];
     this.isClaro = false;
+
   }
 
+  avisarPrint () {
+      console.log(this.isColor);
+  }
 }
