@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 interface Usuario {
   firstName: string;
@@ -15,6 +15,9 @@ interface Departamento {
   templateUrl: './form1.component.html',
   styleUrls: ['./form1.component.css']
 })
+
+
+
 export class Form1Component implements OnInit {
 
 user: Usuario;
@@ -24,6 +27,7 @@ isClaro: boolean;
 isColor: boolean;
 aDepartamentos: Array<Departamento>;
 departamentoSel: Departamento;
+@ViewChild('myForm') formLocal: any;
 
   constructor() { }
 
@@ -47,8 +51,9 @@ departamentoSel: Departamento;
   }
   borrar () {
     console.log('borrar');
+    this.formLocal.reset();
   }
   enviar () {
-    console.log('enviar');
+    console.log(this.formLocal);
   }
 }

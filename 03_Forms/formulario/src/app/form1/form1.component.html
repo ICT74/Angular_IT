@@ -1,24 +1,28 @@
-<form (ngSubmit)="enviar()">
+<form (ngSubmit)="enviar()" #myForm = "ngForm">
     
         <p>
             <!--Etiqueta / Campo "Mombre"-->						
             <label for="firstname">Nombre</label>
-            <input type="text" id="firstname" name="firstname"
-              [(ngModel)]="user.firstName">
+            <input type="text" id="firstname" name="firstname" #firstnameState="ngModel"
+              [(ngModel)]="user.firstName" required="true">
           </p>
+          <div class="error-message"
+          [hidden]="firstnameState.valid || firstnameState.untouched">
+          El nombre es obligatorio</div>
                 
           <p>
             <!--Etiqueta / Campo "Apellidos"-->
             <label for="lastname">Apellidos</label>
             <input type="text" id="lastname" name="lastname"
-              [(ngModel)]="user.lastName">
+              [(ngModel)]="user.lastName" required="true">
           </p>
         
           <p>
             <!--Etiqueta / Campo "Telefono"-->
             <label for="phoneNumber">Teléfono</label>
             <input type="text" id="phoneNumber" name="phoneNumber" 
-              [(ngModel)]="user.phoneNumber"> 
+              [(ngModel)]="user.phoneNumber" required="true"> 
+              <!-- pattern="/^\d{9}$/" -->
           </p>						
         
           						
@@ -70,10 +74,10 @@
         <!--Botones "Enviar" y "Borrar"-->
         <p>
             <label for=""></label>
-            <input type="submit" id="enviar" name="enviar" value="Enviar">
+            <input type="submit" id="enviar" name="enviar" value="Enviar" [disabled]="!myForm.valid">
             <label for=""></label>			
             <input type="button" id="borrar" name="borrar" 
-            value="Borrar" (click)="borrar()">
+            value="Borrar" (click)="borrar()" [disabled]="myForm.pristine">
         </p>
 
     </form>
