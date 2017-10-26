@@ -5,6 +5,10 @@ interface Usuario {
   lastName: string;
   phoneNumber: string;
 }
+interface Departamento {
+  nombre: string;
+  codigo: string | number;
+}
 
 @Component({
   selector: 'app-form1',
@@ -18,7 +22,8 @@ impresoraSel: string;
 aImpresoras: Array<string>;
 isClaro: boolean;
 isColor: boolean;
-
+aDepartamentos: Array<Departamento>;
+departamentoSel: Departamento;
 
   constructor() { }
 
@@ -26,10 +31,24 @@ isColor: boolean;
     this.user = {firstName: '', lastName: '', phoneNumber: ''};
     this.aImpresoras = [ 'hp', 'Canon', 'lexmart'];
     this.isClaro = false;
-
+    this.aDepartamentos = [
+       {nombre: 'Marketing', codigo: 22},
+       {nombre: 'Informatica', codigo: 21},
+       {nombre: 'Ventas', codigo: '26T'}
+    ];
   }
 
   avisarPrint () {
       console.log(this.isColor);
+  }
+
+  avisarDepartamento () {
+    console.log(this.departamentoSel);
+  }
+  borrar () {
+    console.log('borrar');
+  }
+  enviar () {
+    console.log('enviar');
   }
 }

@@ -1,4 +1,4 @@
-<form>
+<form (ngSubmit)="enviar()">
     
         <p>
             <!--Etiqueta / Campo "Mombre"-->						
@@ -21,14 +21,7 @@
               [(ngModel)]="user.phoneNumber"> 
           </p>						
         
-          <!--Botones "Enviar" y "Borrar"-->
-          <p>
-            <label for=""></label>
-            <input type="submit" id="enviar" name="enviar" value="Enviar">
-            <label for=""></label>			
-            <input type="button" id="borrar" name="borrar" 
-            value="Borrar" (click)="borrar()">
-          </p>						
+          						
     
         <!--Radio-Buttos-->
         <h2>Selecciona una Impresora</h2>
@@ -63,14 +56,24 @@
         </p>
        
         <!--Select/options --> 
-        <!-- <p>
-            <label for="select">Provincia </label>
-            <select id="select" [(ngModel)]="provinciaSeleccionada" (ngModelChange)="avisarProvincia()"> 
-                <option *ngFor="let provincia of aProvincias"
-                    [ngValue]="provincia">
-                    {{provincia.nombre}}
+        <p>
+            <label for="select">Departamento </label>
+            <select id="select" name="select" [(ngModel)]="departamentoSel" (ngModelChange)="avisarDepartamento()"> 
+              <option>Elige</option>
+              <option *ngFor="let departamento of aDepartamentos"
+                    [ngValue]="departamento">
+                    {{departamento.nombre}}
                 </option>
             </select>
-        </p>	 -->
+        </p>	
+
+        <!--Botones "Enviar" y "Borrar"-->
+        <p>
+            <label for=""></label>
+            <input type="submit" id="enviar" name="enviar" value="Enviar">
+            <label for=""></label>			
+            <input type="button" id="borrar" name="borrar" 
+            value="Borrar" (click)="borrar()">
+        </p>
 
     </form>
