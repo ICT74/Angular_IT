@@ -1,0 +1,10 @@
+<p>
+  <h2>Servicio de Libros</h2>
+  <input type="text" placeholder="Escribe" [[ngModel]]="sClave">
+  <button (click)="btnBuscar">buscar</button>
+  <div *ngIf="aLibros.length"><h3>Resultado busqueda </h3>
+  <ul>
+    <li *ngFor="let libro of aLibros">{{libro}}</li>
+  </ul>
+  </div>
+</p>

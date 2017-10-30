@@ -1,4 +1,3 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -10,6 +9,8 @@ import { SamplesModule } from './samples/samples.module';
 import { AppComponent } from './app.component';
 import { HijoComponent } from './hijo/hijo.component';
 import { PadreComponent } from './padre/padre.component';
+
+import { ServicesModule} from './services/services.module';
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import { PadreComponent } from './padre/padre.component';
     SharedModule,
     SamplesModule
   ],
-  providers: [],
+  providers: [ServicesModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
